@@ -1,5 +1,19 @@
-import React from "react"
+import { Link } from 'gatsby';
+import React from 'react';
+import Layout from '../components/layout';
+import Seo from '../components/seo';
 
-const AboutPage = () => <h1>About Page</h1>
+const AboutPage: React.FC = () => (
+  <Layout>
+    <Seo title="Home" />
+    <h1>About Page</h1>
 
-export default AboutPage
+    <ul>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+    </ul>
+  </Layout>
+);
+
+export default AboutPage;

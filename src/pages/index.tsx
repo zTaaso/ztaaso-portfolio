@@ -11,9 +11,6 @@ const IndexPage = () => (
 
     <ul>
       <li>
-        <a href="/about">About with Anchor</a>
-      </li>
-      <li>
         <Link to="/about">About with Gatsby Link</Link>
       </li>
     </ul>
