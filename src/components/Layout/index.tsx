@@ -2,13 +2,18 @@ import * as React from 'react';
 
 import Profile from '../Profile';
 
+import GlobalStyles from '../../styles/global';
+
+import * as S from './styles';
+
 const Layout = ({ children }) => (
-  <>
+  <S.LayoutWrapper>
+    <GlobalStyles />
     <aside>
       <Profile />
     </aside>
-    <main>{children}</main>
-  </>
+    <S.LayoutMain>{children}</S.LayoutMain>
+  </S.LayoutWrapper>
 );
 
 export default Layout;
