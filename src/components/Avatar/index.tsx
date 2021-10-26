@@ -7,7 +7,12 @@ const Avatar = () => {
     query {
       avatarImage: file(relativePath: { eq: "profile-photo.jpg" }) {
         childImageSharp {
-          gatsbyImageData(layout: FIXED, width: 60, height: 60)
+          gatsbyImageData(
+            layout: CONSTRAINED
+            width: 80
+            height: 80
+            placeholder: BLURRED
+          )
         }
       }
     }
@@ -18,14 +23,6 @@ const Avatar = () => {
   return (
     <GatsbyImage
       image={avatarImage.childImageSharp.gatsbyImageData}
-      alt="profile-picture"
-    />
-  );
-
-  return (
-    <StaticImage
-      // image={avatarImage.childImageSharp.fixed}
-      src="../../images/profile-photo.jpg"
       alt="profile-picture"
     />
   );
