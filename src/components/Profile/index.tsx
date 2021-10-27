@@ -2,6 +2,8 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Avatar from '../Avatar';
 
+import * as S from './styles';
+
 interface ProfileProps {}
 
 const Profile: React.FC<ProfileProps> = () => {
@@ -21,12 +23,17 @@ const Profile: React.FC<ProfileProps> = () => {
   `);
 
   return (
-    <div className="Profile-wrapper">
-      <Avatar />
-      <h1>{`${siteMetadata.title}oi`}</h1>
-      <h2>{siteMetadata.position}</h2>
-      <p>{siteMetadata.description}</p>
-    </div>
+    <S.ProfileWrapper>
+      <S.ProfileLink to="/">
+        <Avatar />
+        <S.ProfileAuthor>
+          {siteMetadata.title}
+
+          <S.ProfilePosition>{siteMetadata.position}</S.ProfilePosition>
+        </S.ProfileAuthor>
+      </S.ProfileLink>
+      <S.ProfileDescription>{siteMetadata.description}</S.ProfileDescription>
+    </S.ProfileWrapper>
   );
 };
 
