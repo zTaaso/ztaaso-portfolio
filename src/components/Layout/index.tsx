@@ -1,17 +1,14 @@
 import * as React from 'react';
 
-import Profile from '../Profile';
-
 import GlobalStyles from '../../styles/global';
 
 import * as S from './styles';
+import Sidebar from '../Sidebar';
 
 const Layout = ({ children }) => (
   <S.LayoutWrapper>
     <GlobalStyles />
-    <aside>
-      <Profile />
-    </aside>
+    <Sidebar />
     <S.LayoutMain>{children}</S.LayoutMain>
   </S.LayoutWrapper>
 );
